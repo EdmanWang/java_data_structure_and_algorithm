@@ -2,6 +2,7 @@ package com.edmanwang.chapter1;
 
 /**
  * 斐波那契数列实现
+ * 实现的思路就是，递归实现
  */
 public class Fibonacci {
     /**
