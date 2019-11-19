@@ -1,4 +1,4 @@
-package com.edmanwang.chapter2.reviewCode;
+package com.edmanwang.chapter2.reviewCode1;
 
 import java.util.Arrays;
 
