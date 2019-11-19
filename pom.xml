@@ -12,6 +12,7 @@
         <module>array</module>
         <module>stack_queue_linkedList</module>
         <module>algorithm</module>
+        <module>tree</module>
     </modules>
 
     <dependencies>
