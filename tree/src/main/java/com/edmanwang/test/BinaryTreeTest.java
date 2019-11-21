@@ -52,5 +52,10 @@ public class BinaryTreeTest {
         System.out.println(node3.getData());
 
 
+        System.out.println("++++++++删除节点++++++++");
+
+        // 树节点删除
+        tree.deleteNode('D');
+        tree.frontShow(root);
     }
 }

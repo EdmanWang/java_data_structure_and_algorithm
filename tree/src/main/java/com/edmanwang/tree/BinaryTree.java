@@ -36,4 +36,8 @@ public class BinaryTree {
     public TreeNode nodeSearchThree(char c) {
         return root.nodeSearchThree(c);
     }
+
+    public void deleteNode(char c) {
+        root.deleteNode(c);
+    }
 }

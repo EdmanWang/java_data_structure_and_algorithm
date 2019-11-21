@@ -9,16 +9,22 @@ public class TreeNode {
 
     private TreeNode rightNode;
 
+    private TreeNode parent;
+
     public TreeNode(char data) {
         this.data = data;
     }
 
     public void setLeftNode(TreeNode leftNode) {
         this.leftNode = leftNode;
+        // 设置父节点
+        leftNode.parent = this;
     }
 
     public void setRightNode(TreeNode rightNode) {
         this.rightNode = rightNode;
+        // 设置父节点
+        rightNode.parent = this;
     }
 
     public char getData() {
@@ -110,11 +116,22 @@ public class TreeNode {
         return target;
     }
 
+    public void deleteNode(char c) {
+        // 先遍历
+        TreeNode treeNode = nodeSearchTwo(c);
 
+        // 找到再删除
+        if (treeNode != null) {
+            TreeNode parent = treeNode.parent;
+            parent.leftNode = null;
+        } else {
+            System.out.println("需要删除的节点不存在");
+        }
+
+    }
+    
     @Override
     public String toString() {
-        return "TreeNode{" +
-                ", data=" + data +
-                '}';
+        return "TreeNode{" + " data=" + data + '}';
     }
 }
