@@ -1,4 +1,4 @@
-package com.edmanwang.tree;
+package com.edmanwang.tree.linkedTree;
 
 // 树是由树节点创建的
 public class TreeNode {
@@ -129,7 +129,7 @@ public class TreeNode {
         }
 
     }
-    
+
     @Override
     public String toString() {
         return "TreeNode{" + " data=" + data + '}';

@@ -1,10 +1,10 @@
 package com.edmanwang.test;
 
-import com.edmanwang.tree.BinaryTree;
-import com.edmanwang.tree.TreeNode;
+import com.edmanwang.tree.linkedTree.BinaryTree;
+import com.edmanwang.tree.linkedTree.TreeNode;
 
 // 二叉树测试
-public class BinaryTreeTest {
+public class LinkedBinaryTreeTest {
 
     public static void main(String[] args) {
         // 理解为这是一棵树

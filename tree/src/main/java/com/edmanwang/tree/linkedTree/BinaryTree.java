@@ -1,4 +1,4 @@
-package com.edmanwang.tree;
+package com.edmanwang.tree.linkedTree;
 
 //二叉树对象
 public class BinaryTree {
