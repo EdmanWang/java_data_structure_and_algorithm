@@ -47,6 +47,7 @@ public class TreeNode implements Comparable {
         this.rightNode = rightNode;
     }
 
+    @Override
     public int compareTo(Object o) {
         TreeNode o1 = (TreeNode) o;
         return o1.weight - this.weight;
