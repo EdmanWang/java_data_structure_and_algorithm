@@ -22,7 +22,7 @@ public class BinarySortTreeTest {
 //        System.out.println("--------------------------");
 //
 //        // 查找节点
-//        BinarySortTreeNode node = tree.searchNode(9);
+//        BalanceBinaryTreeNode node = tree.searchNode(9);
 //        System.out.println(node.getParent());
 //
 //        System.out.println("--------------------------");

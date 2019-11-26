@@ -51,7 +51,7 @@ public class BinarySortTreeNode {
 
     @Override
     public String toString() {
-        return "BinarySortTreeNode{" + "value=" + value + " }";
+        return "BalanceBinaryTreeNode{" + "value=" + value + " }";
     }
 
     public void addNode(BinarySortTreeNode node) {
