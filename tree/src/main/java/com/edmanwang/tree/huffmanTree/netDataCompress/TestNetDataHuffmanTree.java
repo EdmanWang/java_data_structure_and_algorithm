@@ -5,7 +5,7 @@ import java.util.*;
 public class TestNetDataHuffmanTree {
 
     public static void main(String[] args) {
-        String str = "can you can a can as a can canner can a can.";
+        String str = "abaabc";
         // 将字符串转换成字byte数组
         byte[] bytes = str.getBytes();
 
@@ -33,6 +33,8 @@ public class TestNetDataHuffmanTree {
             }
             sb.append(byteToBit);
         }
+
+        System.out.println(sb.toString());
 
         Map<String, Byte> stringByteMap = new HashMap<String, Byte>();
 
@@ -101,6 +103,7 @@ public class TestNetDataHuffmanTree {
         for (int i = 0; i < bytes.length; i++) {
             sb.append(huffmanCodes.get(bytes[i]));
         }
+        System.out.println(sb.toString());
         int length;
         if (sb.length() % 8 == 0) {
             length = sb.length() / 8;

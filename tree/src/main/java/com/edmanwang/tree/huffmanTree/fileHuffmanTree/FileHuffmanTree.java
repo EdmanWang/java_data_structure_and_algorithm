@@ -10,7 +10,7 @@ public class FileHuffmanTree {
 
     public static void main(String[] args) {
 
-        String wgx = "wgx";
+        String wgx = "abaabc";
         byte[] bytes = wgx.getBytes();
         // 哈夫曼编码实现
         byte[] zipBytes = zip(bytes);
@@ -24,7 +24,6 @@ public class FileHuffmanTree {
         // 将编码后的byte转换成编码前的字符串
         for (int i = 0; i < zipBytes.length; i++) {
             byte zipByte = zipBytes[i];
-            String str = Integer.toBinaryString(zipByte);
             String toBit = null;
             if (i == zipBytes.length - 1) {
                 toBit = byteToBit(false, zipByte);
@@ -33,7 +32,7 @@ public class FileHuffmanTree {
             }
             sb.append(toBit);
         }
-        System.out.println("解码后 " + sb.toString());
+        System.out.println("解码" + sb.toString());
         // 将字符串按照编码表解码
 
         return null;
@@ -89,7 +88,7 @@ public class FileHuffmanTree {
             encodeStr.append(huffmanCode.get(b));
         }
         // 编码后的编码字符串
-        System.out.println("编码后 " + encodeStr.toString());
+        System.out.println("编码" + encodeStr.toString());
 
         int length;
         if (encodeStr.length() % 8 == 0) {
