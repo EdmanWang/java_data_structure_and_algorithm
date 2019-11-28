@@ -13,6 +13,7 @@
         <module>stack_queue_linkedList</module>
         <module>algorithm</module>
         <module>tree</module>
+        <module>hash_table</module>
     </modules>
 
     <dependencies>
