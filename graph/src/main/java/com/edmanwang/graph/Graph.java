@@ -3,7 +3,9 @@ package com.edmanwang.graph;
 import com.edmanwang.model.Vertex;
 
 import java.util.Arrays;
+import java.util.Queue;
 import java.util.Stack;
+import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * 图对象
@@ -48,33 +50,77 @@ public class Graph {
         return edgeRelation;
     }
 
-    // 深度优先搜索算法实现
+    // 深度优先搜索算法实现，按照最大深度去找元素
     public void dfs() {
-        // 首先需要一个栈的数据结构去存储数据
+        // 首先需要一个栈的数据结构去存储数据，这个数据结构是用来可以倒退遍历的数据
         Stack<Vertex> stack = new Stack<>();
         // 需要一个索引去记录遍历的位置
         int index = 0;
         stack.push(vertices[index]);
+        // 设置当前这个元素标识为已经访问
         vertices[index].setVisited(true);
+        // 既然是已经访问就是说名，这个元素可以打印出来
         System.out.println(vertices[index].getValue());
         out:
         while (!stack.isEmpty()) {
             for (int i = index + 1; i < vertices.length; i++) {
                 if (edgeRelation[index][i] == 1 && !vertices[i].isVisited()) {
+                    /**
+                     * 表示这两个定点是联通的，并且后一个订单没有访问
+                     * 则：将定点加入到栈中并设置其为已经访问，并将其打印
+                     * 注意：这个时候，需要将遍历的位置向后挪一个，即使刚新添加的位置，再从新添加的位置向后遍历，找到即联通又没有访问的点
+                     */
                     stack.push(vertices[i]);
                     vertices[i].setVisited(true);
                     System.out.println(vertices[i].getValue());
+
+                    index++;
+                    continue out;
                 }
             }
-            index++;
+
+            // 如果没找到的话，就需要弹出栈顶元素，继续从该点的上一个点赵剩下的联通，但是没有访问的点
+            stack.pop();
+            if (!stack.isEmpty()) {
+                Vertex vertex = stack.peek();
+                // 将索引位置重置
+                index = getIndex(vertex);
+            }
         }
+    }
+
+    /**
+     * 广度优先遍历
+     * 1：实现的思路---> 有点像树结构的层次遍历，即表示先要遍历完该节点的下一层全部的节点
+     */
+    public void wfs() {
+        // 首先是需要一个队列的数据结构来存放
+        Queue<Vertex> queue = new LinkedBlockingQueue<>();
+        Vertex vertex = vertices[0];
+        vertex.setVisited(true);
+        queue.add(vertex);
+        System.out.println(vertex.getValue());
+        // 取一个默认的定点开始遍历，默认取存放数据的第一个数据，
+        while (!queue.isEmpty()) {
+            // 出队列，将第一个数据从队列中出队
+            Vertex remove = queue.poll();
+            // 拿到索引，遍历该索引联通，并且没有访问的节点
+            index = getIndex(remove);
+            for (int i = index + 1; i < vertices.length; i++) {
+                if (edgeRelation[index][i] == 1 && !vertices[i].isVisited()) {
+                    Vertex v = vertices[i];
+                    v.setVisited(true);
+                    queue.add(v);
+                    System.out.println(v.getValue());
+                }
+            }
+        }
+        // 将第一个默认的数据加入到队列中，并标识该定点事访问过的
     }
 
     @Override
     public String toString() {
-        return "Graph{" +
-                "edgeRelation=" + Arrays.toString(edgeRelation) +
-                '}';
+        return "Graph{" + "edgeRelation=" + Arrays.toString(edgeRelation) + '}';
     }
 
     // 通过遍历顶点数组拿到顶点元素对应的位置

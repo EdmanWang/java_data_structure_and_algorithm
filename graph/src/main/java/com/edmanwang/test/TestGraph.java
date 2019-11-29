@@ -28,10 +28,14 @@ public class TestGraph {
         graph.createEdge(v2, v4);
         graph.createEdge(v2, v5);
 
-        for (int[] arr : graph.getEdgeRelation()){
+        for (int[] arr : graph.getEdgeRelation()) {
             System.out.println(Arrays.toString(arr));
         }
 
+        // 深度优先遍历
         graph.dfs();
+
+        // 广度优先遍历
+        graph.wfs();
     }
 }
