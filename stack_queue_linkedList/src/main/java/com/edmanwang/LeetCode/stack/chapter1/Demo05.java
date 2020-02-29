@@ -1,8 +1,7 @@
-package com.edmanwang.LeetCode.stack;
+package com.edmanwang.LeetCode.stack.chapter1;
 
 import java.util.Deque;
 import java.util.LinkedList;
-import java.util.Queue;
 
 /**
  * @Author EdmanWang

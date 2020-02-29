@@ -1,4 +1,4 @@
-package com.edmanwang.LeetCode.chapter1;
+package com.edmanwang.LeetCode.linkedList.chapter1;
 
 /**
  * @Author EdmanWang

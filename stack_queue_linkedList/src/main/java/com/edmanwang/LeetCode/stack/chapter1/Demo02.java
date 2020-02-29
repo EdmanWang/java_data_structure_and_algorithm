@@ -1,4 +1,4 @@
-package com.edmanwang.LeetCode.stack;
+package com.edmanwang.LeetCode.stack.chapter1;
 
 import java.util.ArrayList;
 import java.util.Stack;

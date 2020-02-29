@@ -1,9 +1,4 @@
-package com.edmanwang.LeetCode.chapter1;
-
-import org.w3c.dom.NodeList;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.edmanwang.LeetCode.linkedList.chapter1;
 
 /**
  * @Author EdmanWang
